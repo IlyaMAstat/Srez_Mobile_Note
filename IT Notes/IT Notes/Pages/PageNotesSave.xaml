@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IT_Notes.Pages.PageNotesSave" BackgroundColor="LightCyan" Title="Заметка">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="50">
+                <Frame CornerRadius="10"
+                       IsClippedToBounds="True"
+                        HorizontalOptions="Center"
+                       Padding="0"         
+                       VerticalOptions="Center"
+                      >
+                    <Image Source="{Binding Picture, TargetNullValue='none.png'}" VerticalOptions="Center" HorizontalOptions="Center"  Aspect="AspectFit"  x:Name="imagePhoto"/>
+
+                </Frame>
+                <Grid ColumnDefinitions="*,*" VerticalOptions="EndAndExpand" Margin="15,20">
+                    <Button Text="Галерея" x:Name="btnGalery" Margin="5" Grid.Column="0" Clicked="btnGalery_Clicked" CornerRadius="10" BorderColor="Gray"  BorderWidth="0.1" />
+                    <Button Text="Камера" x:Name="btnCamera" Margin="5" Grid.Column="1" Clicked="btnCamera_Clicked" CornerRadius="10" BorderColor="Gray"  BorderWidth="0.1" />
+                </Grid>
+                <Editor Placeholder="Текст заметки" Text="{Binding Text}"  HeightRequest="200"/>
+            </StackLayout>
+            <Grid ColumnDefinitions="*,*" VerticalOptions="EndAndExpand" Margin="15">
+                <Button Text="Сохранить" x:Name="btnSave" Clicked="btnSave_Clicked" Grid.Column="0" BorderColor="Gray" Margin="5"  BorderWidth="0.1" CornerRadius="10"/>
+                <Button Text="Удалить" x:Name="btnDelete" Clicked="btnDelete_Clicked" Grid.Column="1" BorderColor="Gray" Margin="5"  BorderWidth="0.1"  CornerRadius="10"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
